@@ -53,23 +53,14 @@ public class ConfigurationManager {
 
     public void appendCommand(String name, boolean playerCommand, String command) {
         FileConfiguration config = Main.getInstance().getConfig();
-        System.out.println("0 success0!");
         ConfigurationSection commandListSection = config.getConfigurationSection("command-list");
-        System.out.println("1 success0!");
         String set1 = commandListSection.getConfigurationSection(name).get("commands").toString().concat(command + ";");
-        System.out.println("2 success0!");
         commandListSection.getConfigurationSection(name).set("commands", set1);
-        System.out.println("3 success0!");
         String previousBoolean = commandListSection.getConfigurationSection(name).get("playercommand").toString().concat(String.valueOf(playerCommand) + ";");
-        System.out.println("4 success0!");
         commandListSection.getConfigurationSection(name).set("playercommand", previousBoolean);
-        System.out.println("5 success0!");
         Main.getInstance().saveConfig();
-        System.out.println("6 success0!");
         ConfigurationManager.createConfig();
-        System.out.println("7 success0!");
         Main.getInstance().reloadConfig();
-        System.out.println("8 success0!");
     }
 
     public void removeCommand(String name) {
