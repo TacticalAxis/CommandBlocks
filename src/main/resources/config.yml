@@ -1,0 +1,25 @@
+#THIS IS THE COMMANDBLOCKS PLUGIN CREATEED BY TACTICALAXIS
+#========================================================================
+#IN SPECIFIED MESSAGES
+#(create-command, remove-command, add-command) you can add varaibles like
+#(%name%, %version%).
+#========================================================================
+#PLUGIN DESCRIPTION:
+#A plugin which adds the ability to assign commands to certain blocks.
+#When the (assigned) block is right clicked, the command is run
+#========================================================================
+messages:
+  create-command: '&aCommand Created'
+  remove-command: '&cCommand removed'
+  add-command: '&2Added a second command to &c%name%'
+  on-teleport: '&aTeleported to %name%'
+  on-reload: '&aReloaded'
+  version-message: '&aCommandBlocks %version% created by TacticalAxis'
+  console-message: '&cYou can only do this as a player!'
+  no-permission: '&cNo Permission!'
+command-list:
+  #example
+  name:
+    playercommand: true
+    location: world;0;0;0
+    commands: say hi

@@ -1,0 +1,10 @@
+name: CommandBlocks
+version: ${project.version}
+main: tacticalaxis.commandblocks.Main
+prefix: CB
+authors: [TacticalAxis]
+description: A plugin which adds the ability to assign commands to certain blocks. When the (assigned) block is right clicked, the command is run
+commands:
+  cb:
+    description: The main plugin command
+    usage: /<command>
