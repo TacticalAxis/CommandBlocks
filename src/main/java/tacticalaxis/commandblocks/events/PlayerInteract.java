@@ -13,9 +13,11 @@ public class PlayerInteract implements Listener {
     public void onPlayerInteract(PlayerInteractEvent event) {
         try {
             if(event.getAction() == Action.RIGHT_CLICK_BLOCK) {
-                ConfigurationManager configurationManager = new ConfigurationManager();
-                Location location = event.getClickedBlock().getLocation();
-                configurationManager.execute(event.getPlayer(), location);
+                if(event.getPlayer().hasPermission("commandblock.use")) {
+                    ConfigurationManager configurationManager = new ConfigurationManager();
+                    Location location = event.getClickedBlock().getLocation();
+                    configurationManager.execute(event.getPlayer(), location);
+                }
             }
         } catch (Exception ignored){}
 
