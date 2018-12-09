@@ -84,7 +84,7 @@ public class ConfigurationManager {
             Double z = Double.parseDouble(all[3]);
             Location l = new Location(world, x, y, z);
             if (location.distance(l) < 1) {
-                String[] commands = configurationSection.getConfigurationSection(s).get("commands").toString().split(";");
+                String[] commands = configurationSection.getConfigurationSection(s).get("commands").toString().replace("%player%",player.getName()).split(";");
                 String[] booleans = configurationSection.getConfigurationSection(s).get("playercommand").toString().split(";");
                 if (commands.length == 1 && booleans.length == 1) {
                     if (booleans[0].equalsIgnoreCase("true")) {
